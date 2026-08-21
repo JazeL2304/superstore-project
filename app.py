@@ -148,24 +148,28 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-testid="stW
     display: none !important;
 }
 
-/* Sidebar Select Box Styling (Crisp Dark Theme, No White Boxes) */
-section[data-testid="stSidebar"] [data-baseweb="select"],
-section[data-testid="stSidebar"] [data-baseweb="select"] *,
-section[data-testid="stSidebar"] [data-baseweb="select"] > div,
-section[data-testid="stSidebar"] [data-baseweb="select"] div[role="combobox"],
-section[data-testid="stSidebar"] [data-baseweb="select"] span {
+/* Sidebar Select Box Styling (Crisp Dark Theme, Guaranteed on Cloud & Local) */
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"],
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] *,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > div,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > div > div,
+section[data-testid="stSidebar"] div[data-baseweb="select"],
+section[data-testid="stSidebar"] div[data-baseweb="select"] *,
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div,
+section[data-testid="stSidebar"] div[data-baseweb="select"] div[role="combobox"],
+section[data-testid="stSidebar"] div[data-baseweb="select"] span {
     background-color: #221D47 !important;
+    background: #221D47 !important;
     color: #FFFFFF !important;
     border-color: rgba(255, 255, 255, 0.15) !important;
-    font-size: 0.8rem !important;
 }
 
-section[data-testid="stSidebar"] [data-baseweb="select"] {
+section[data-testid="stSidebar"] div[data-baseweb="select"] {
     border-radius: 8px !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-section[data-testid="stSidebar"] [data-baseweb="select"] input {
+section[data-testid="stSidebar"] div[data-baseweb="select"] input {
     caret-color: transparent !important;
     cursor: pointer !important;
     user-select: none !important;
@@ -173,25 +177,9 @@ section[data-testid="stSidebar"] [data-baseweb="select"] input {
     background-color: transparent !important;
 }
 
-section[data-testid="stSidebar"] [data-baseweb="select"] svg {
+section[data-testid="stSidebar"] div[data-baseweb="select"] svg {
     fill: #FFFFFF !important;
     color: #FFFFFF !important;
-}
-
-section[data-testid="stSidebar"] div[data-baseweb="select"] * {
-    color: #FFFFFF !important;
-}
-
-section[data-testid="stSidebar"] div[data-baseweb="input"] > div {
-    background-color: #221D47 !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 8px !important;
-    color: #FFFFFF !important;
-}
-
-section[data-testid="stSidebar"] input {
-    color: #FFFFFF !important;
-    font-size: 0.8rem !important;
 }
 
 section[data-testid="stSidebar"] label p {
