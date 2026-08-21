@@ -388,14 +388,13 @@ with st.sidebar:
     # 3. Clean Interactive Filters (Pure Selection)
     st.markdown('<div class="sidebar-section-title">Filter Parameters</div>', unsafe_allow_html=True)
     
-    # Period Preset Selector
+    # Period Preset Selector (Clean, 4 Fixed Controls)
     period_options = [
         "All Period (2014 - 2017)",
         "Year 2017 (Latest)",
         "Year 2016",
         "Year 2015",
-        "Year 2014",
-        "Custom Date Range"
+        "Year 2014"
     ]
     selected_period = st.selectbox("Period Filter", period_options, index=0)
     
@@ -410,16 +409,7 @@ with st.sidebar:
     elif selected_period == "Year 2014":
         start_date, end_date = min_date_db, datetime.date(2014, 12, 31)
     else:
-        date_range = st.date_input(
-            "Custom Date (2014-01-03 to 2017-12-30)",
-            value=(min_date_db, max_date_db),
-            min_value=min_date_db,
-            max_value=max_date_db
-        )
-        if isinstance(date_range, (tuple, list)) and len(date_range) == 2:
-            start_date, end_date = date_range
-        else:
-            start_date, end_date = min_date_db, max_date_db
+        start_date, end_date = min_date_db, max_date_db
         
     all_regions = ["All Regions"] + sorted(df_raw['Region'].unique().tolist())
     selected_reg = st.selectbox("Region", all_regions, index=0)
