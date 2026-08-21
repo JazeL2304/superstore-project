@@ -1,12 +1,14 @@
 -- ============================================================================
 -- Superstore Sales Analysis - SQL Queries
--- Database: superstore.db | Table: superstore
+-- Databases: SQLite (superstore.db) & MySQL (superstore_db)
+-- Table: superstore
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
 -- Pertanyaan Bisnis 1: Sub-kategori produk mana yang paling untung vs paling rugi?
 -- Penjelasan: Mengagregasi Total Sales, Total Profit, Rata-rata Diskon, dan Profit Margin 
 -- per Sub-Category untuk mengidentifikasi produk paling profitabel dan paling merugikan.
+-- Dialect: ANSI SQL / Compatible with SQLite & MySQL
 -- ----------------------------------------------------------------------------
 SELECT 
     Sub_Category,
@@ -23,6 +25,7 @@ ORDER BY total_profit DESC;
 -- Pertanyaan Bisnis 2: Apakah diskon berpengaruh terhadap profit?
 -- Penjelasan: Mengelompokkan transaksi berdasarkan bracket persentase diskon
 -- untuk menganalisis dampak tingkat pemberian diskon terhadap profitabilitas rata-rata dan margin.
+-- Dialect: ANSI SQL / Compatible with SQLite & MySQL
 -- ----------------------------------------------------------------------------
 SELECT 
     CASE 
@@ -44,9 +47,9 @@ ORDER BY discount_bracket ASC;
 
 -- ----------------------------------------------------------------------------
 -- Pertanyaan Bisnis 3: Bagaimana tren penjualan dari waktu ke waktu (bulanan)?
--- Penjelasan: Menggunakan strftime('%Y-%m', Order_Date) untuk membuat aggregasi bulanan
--- tren Total Sales, Total Profit, dan Margin Profit dari tahun 2014-2017.
+-- Penjelasan: Mengagregasi data bulanan untuk melihat tren Total Sales, Total Profit, dan Margin.
 -- ----------------------------------------------------------------------------
+-- [SQLite Version]
 SELECT 
     strftime('%Y-%m', Order_Date) AS year_month,
     COUNT(DISTINCT Order_ID) AS total_orders,
@@ -57,11 +60,23 @@ FROM superstore
 GROUP BY year_month
 ORDER BY year_month ASC;
 
+-- [MySQL Alternative Syntax]
+-- SELECT 
+--     DATE_FORMAT(Order_Date, '%Y-%m') AS year_month,
+--     COUNT(DISTINCT Order_ID) AS total_orders,
+--     ROUND(SUM(Sales), 2) AS monthly_sales,
+--     ROUND(SUM(Profit), 2) AS monthly_profit,
+--     ROUND((SUM(Profit) / SUM(Sales)) * 100, 2) AS profit_margin_pct
+-- FROM superstore
+-- GROUP BY year_month
+-- ORDER BY year_month ASC;
+
 
 -- ----------------------------------------------------------------------------
 -- Pertanyaan Bisnis 4: Wilayah (region) mana yang performanya paling baik?
 -- Penjelasan: Mengagregasi per wilayah (Region) untuk melihat persebaran sales,
 -- profitabilitas, dan margin profit antar region (West, East, Central, South).
+-- Dialect: ANSI SQL / Compatible with SQLite & MySQL
 -- ----------------------------------------------------------------------------
 SELECT 
     Region,
@@ -78,6 +93,7 @@ ORDER BY total_profit DESC;
 -- Pertanyaan Bisnis 5: Siapa 10 customer dengan kontribusi profit tertinggi?
 -- Penjelasan: Mengurutkan pelanggan berdasarkan akumulasi total profit terbesar 
 -- yang mereka kontribusikan ke Superstore.
+-- Dialect: ANSI SQL / Compatible with SQLite & MySQL
 -- ----------------------------------------------------------------------------
 SELECT 
     Customer_ID,

@@ -39,9 +39,13 @@ ENV/
 *.swp
 *.swo
 
-# Environment variables
-.env
-.env.local
+# Antigravity / Agent Skills
+.agents/
+.claude/
+.gemini/
+skills-lock.json
+index.html
+src/
 
 # Note: sql/superstore.db is explicitly NOT ignored as it is required by the Streamlit dashboard on deployment
 !sql/superstore.db

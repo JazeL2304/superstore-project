@@ -23,8 +23,8 @@ Analisis performa penjualan dan profitabilitas retail Superstore periode 2014-20
 ## 🛠️ Project Architecture & Tech Stack
 
 - **Data Processing & EDA:** Python (`pandas`, `matplotlib`, `seaborn`)
-- **SQL Database & Querying:** SQLite (`sqlite3`) & `sql/queries.sql`
-- **Interactive Dashboard:** `Streamlit` & `Plotly Express`
+- **SQL Databases & Querying:** SQLite (`superstore.db`) & MySQL (`sql/schema_mysql.sql`, `sql/queries.sql`)
+- **Interactive Dashboard:** `Streamlit` & `Plotly`
 - **Environment & Package Management:** `requirements.txt` with pinned versions
 - **Deployment Ready:** Streamlit Community Cloud configuration (`.streamlit/config.toml`)
 
@@ -35,12 +35,13 @@ Analisis performa penjualan dan profitabilitas retail Superstore periode 2014-20
 ```text
 superstore-project/
 ├── .streamlit/
-│   └── config.toml          # Custom dark theme configuration for Streamlit Cloud
+│   └── config.toml          # Streamlit theme & server configuration
 ├── data/
 │   └── Sample_-_Superstore.csv # Raw Kaggle Superstore dataset (9,994 records)
 ├── sql/
-│   ├── superstore.db        # SQLite database (ISO YYYY-MM-DD date formatted)
-│   ├── build_database.py    # Python ETL script to generate superstore.db
+│   ├── superstore.db        # SQLite portable database (ISO YYYY-MM-DD date formatted)
+│   ├── schema_mysql.sql     # MySQL DDL table schema, indexes, & data loading script
+│   ├── build_database.py    # Python ETL script to generate/sync superstore.db
 │   └── queries.sql          # Pure SQL queries answering the 5 key business questions
 ├── notebook/
 │   └── superstore_analysis.ipynb # Jupyter notebook with EDA & sqlite3 integration
@@ -49,10 +50,10 @@ superstore-project/
 │   ├── monthly_trend.png
 │   ├── profit_per_region.png
 │   └── profit_per_subcategory.png
-├── app.py                   # Streamlit Interactive Dashboard app
+├── app.py                   # Streamlit Interactive Executive Dashboard
 ├── requirements.txt         # Production-ready Python dependencies
-├── .gitignore               # Standard Python gitignore (ensuring superstore.db is tracked)
-└── README.md                # Project documentation
+├── .gitignore               # Standard Python gitignore
+└── README.md                # Complete portfolio documentation
 ```
 
 ---
