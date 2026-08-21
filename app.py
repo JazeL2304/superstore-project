@@ -148,30 +148,44 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-testid="stW
     display: none !important;
 }
 
-/* Sidebar Select Box Styling (Click Only, No Typeable Caret) */
-section[data-testid="stSidebar"] div[data-baseweb="select"] > div {
+/* Sidebar Select Box Styling (Crisp Dark Theme, No White Boxes) */
+section[data-testid="stSidebar"] div[data-baseweb="select"],
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div,
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div > div,
+section[data-testid="stSidebar"] div[data-baseweb="select"] div[role="combobox"],
+section[data-testid="stSidebar"] div[data-baseweb="select"] [data-testid="stMarkdownContainer"],
+section[data-testid="stSidebar"] div[data-baseweb="select"] span {
     background-color: #221D47 !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 8px !important;
     color: #FFFFFF !important;
-    min-height: 38px !important;
-    cursor: pointer !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    font-size: 0.8rem !important;
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="select"] {
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 section[data-testid="stSidebar"] div[data-baseweb="select"] input {
     caret-color: transparent !important;
     cursor: pointer !important;
     user-select: none !important;
+    color: #FFFFFF !important;
+    background-color: transparent !important;
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="select"] svg {
+    fill: #A5A0CE !important;
+    color: #A5A0CE !important;
 }
 
 section[data-testid="stSidebar"] div[data-baseweb="select"] * {
-    color: #E2E8F0 !important;
-    font-size: 0.8rem !important;
+    color: #FFFFFF !important;
 }
 
 section[data-testid="stSidebar"] div[data-baseweb="input"] > div {
     background-color: #221D47 !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 8px !important;
     color: #FFFFFF !important;
 }
