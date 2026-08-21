@@ -149,24 +149,23 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-testid="stW
 }
 
 /* Sidebar Select Box Styling (Crisp Dark Theme, No White Boxes) */
-section[data-testid="stSidebar"] div[data-baseweb="select"],
-section[data-testid="stSidebar"] div[data-baseweb="select"] > div,
-section[data-testid="stSidebar"] div[data-baseweb="select"] > div > div,
-section[data-testid="stSidebar"] div[data-baseweb="select"] div[role="combobox"],
-section[data-testid="stSidebar"] div[data-baseweb="select"] [data-testid="stMarkdownContainer"],
-section[data-testid="stSidebar"] div[data-baseweb="select"] span {
+section[data-testid="stSidebar"] [data-baseweb="select"],
+section[data-testid="stSidebar"] [data-baseweb="select"] *,
+section[data-testid="stSidebar"] [data-baseweb="select"] > div,
+section[data-testid="stSidebar"] [data-baseweb="select"] div[role="combobox"],
+section[data-testid="stSidebar"] [data-baseweb="select"] span {
     background-color: #221D47 !important;
     color: #FFFFFF !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
     font-size: 0.8rem !important;
 }
 
-section[data-testid="stSidebar"] div[data-baseweb="select"] {
+section[data-testid="stSidebar"] [data-baseweb="select"] {
     border-radius: 8px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-section[data-testid="stSidebar"] div[data-baseweb="select"] input {
+section[data-testid="stSidebar"] [data-baseweb="select"] input {
     caret-color: transparent !important;
     cursor: pointer !important;
     user-select: none !important;
@@ -174,9 +173,9 @@ section[data-testid="stSidebar"] div[data-baseweb="select"] input {
     background-color: transparent !important;
 }
 
-section[data-testid="stSidebar"] div[data-baseweb="select"] svg {
-    fill: #A5A0CE !important;
-    color: #A5A0CE !important;
+section[data-testid="stSidebar"] [data-baseweb="select"] svg {
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
 }
 
 section[data-testid="stSidebar"] div[data-baseweb="select"] * {
